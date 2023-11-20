@@ -24,3 +24,9 @@ export function addUserAction(name){
       payload: name
    }
 }
+
+export function deleteAllAction(){
+   return{
+      type: types.DELETE_ALL_USERS
+   }
+}

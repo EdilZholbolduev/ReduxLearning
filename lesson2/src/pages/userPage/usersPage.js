@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUserAction, changeInputAction } from "../../redux/actions";
+import { addUserAction, changeInputAction, deleteAllAction } from "../../redux/actions";
 import User from "../../components/user";
 
 function UsersPage(){
@@ -15,13 +15,16 @@ function UsersPage(){
    const addUser =()=>{
       dispatch(addUserAction(inputValue))
    }
+   const deleteAll =()=>{
+      dispatch(deleteAllAction())
+   }
 
    return (
       <div>
          <h1>{inputValue}</h1>
          <input type="text" placeholder="name" onChange={changeInput}/>
          <button onClick={addUser}>add</button>
-         <button> delete all</button>
+         <button onClick={deleteAll}> delete all</button>
 
          {users.map((users, idx)=> <User key={idx} userName={users}/>)}
       </div>

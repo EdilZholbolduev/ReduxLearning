@@ -10,6 +10,8 @@ export default function usersReducer (state = initialState, action){
          return {...state, inputValue: action.payload}
       case types.ADD_USER:
          return {users: [...state.users, action.payload]}
-      default: return state
+      case types.DELETE_ALL_USERS:
+         return {...state, users:[]}
+      default: return state    
    }
 }
