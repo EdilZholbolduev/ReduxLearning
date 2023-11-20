@@ -22,7 +22,7 @@ function UsersPage(){
    return (
       <div>
          <h1>{inputValue}</h1>
-         <input type="text" placeholder="name" onChange={changeInput}/>
+         <input type="text" placeholder="name" value={inputValue} onChange={changeInput}/>
          <button onClick={addUser}>add</button>
          <button onClick={deleteAll}> delete all</button>
 
