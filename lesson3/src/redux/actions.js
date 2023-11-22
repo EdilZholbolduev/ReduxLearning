@@ -21,6 +21,13 @@ export function getUsersAction(users){
    }
 }
 
+export function getMoreInfo(user){
+   return{
+      type:types.GET_MORE_INFO,
+      payload: user
+   }
+}
+
 
 
 export function fetchUsersAction(){
@@ -33,9 +40,9 @@ export function fetchUsersAction(){
 
 
 export function fetchUserOneInfo(id){
-   return async function (){
+   return async function (dispatch){
       const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       const data = await response.json()
-      console.log(data)
+      dispatch(getMoreInfo(data))
    }
 }
