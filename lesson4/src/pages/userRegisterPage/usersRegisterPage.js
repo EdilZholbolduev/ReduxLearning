@@ -21,10 +21,12 @@ function UserRegisterPage(){
       })
    }
    
-   const addUser = (event)=>{
-      event.preventDefault()
-      dispatch(addUserAction(user))
-   }
+   const addUser = (event) => {
+      
+      event.preventDefault();
+      console.log("Adding user:", user);
+      dispatch(addUserAction(user));
+   };
 
 
 
