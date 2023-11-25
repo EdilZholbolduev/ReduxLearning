@@ -1,16 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTitle, changeTitleWithParams } from "../../store/titleSlice";
+import { changeTitle, changeTitleWithParams, changeInputAction, clearInput } from "../../store/titleSlice";
 
 
 function MainPage(){
 
    const dispatch = useDispatch()
-   const {title} = useSelector(state=>state.titleReducer)
+   const {title, inputValue} = useSelector(state=>state.titleReducer)
 
 
    const withParams = () =>{
-      dispatch(changeTitleWithParams('title params'))
+      dispatch(changeTitleWithParams(inputValue))
+   }
+   const changInput = (event)=>{
+      dispatch(changeInputAction(event.target.value))
    }
 
    
@@ -20,9 +23,9 @@ function MainPage(){
          {/* <button onClick={()=>dispatch(changeTitle())}>change titile</button>
          <button onClick={withParams}>with params</button> */}
 
-         <input type="text"/>
-         <button>clear</button>
-         <button>add</button>
+         <input value={inputValue} type="text" onChange={changInput}/>
+         <button onClick={()=> dispatch(clearInput())}>clear</button>
+         <button onClick={withParams}>add</button>
          <button>delete title</button>
       </div>
    )
