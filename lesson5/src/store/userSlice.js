@@ -12,9 +12,16 @@ const usersSlice = createSlice({
       },
       addUser:(state, action)=>{
          state.users = [...state.users, action.payload]
+      },
+      clearUser: (state,action)=>{
+         state.inputValue = ''
+      },
+      deleteAllUsers:(state, action)=>{
+         state.inputValue=''
+         state.users = []
       }
    }
 })
-export const {changeInput, addUser} = usersSlice.actions
+export const {changeInput, addUser, clearUser, deleteAllUsers} = usersSlice.actions
 
 export default usersSlice.reducer
