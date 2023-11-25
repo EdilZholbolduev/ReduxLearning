@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTitle, changeTitleWithParams, changeInputAction, clearInput } from "../../store/titleSlice";
+import { changeTitle, changeTitleWithParams, changeInputAction, clearInput, deleteTitle } from "../../store/titleSlice";
 
 
 function MainPage(){
@@ -26,7 +26,7 @@ function MainPage(){
          <input value={inputValue} type="text" onChange={changInput}/>
          <button onClick={()=> dispatch(clearInput())}>clear</button>
          <button onClick={withParams}>add</button>
-         <button>delete title</button>
+         <button onClick={()=>dispatch(deleteTitle())}>delete title</button>
       </div>
    )
 }

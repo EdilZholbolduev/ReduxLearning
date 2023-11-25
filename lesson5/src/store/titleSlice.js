@@ -13,15 +13,20 @@ const titleSlice = createSlice({
       },
       changeTitleWithParams:(state,action)=>{
          state.title = action.payload
+         state.inputValue = ''
       },
       changeInputAction: (state,action)=>{
          state.inputValue = action.payload
       },
       clearInput:(state,action)=>{
          state.inputValue = ''
+      },
+      deleteTitle: (state, action)=>{
+         state.inputValue = ''
+         state.title = ''
       }
    }
 })
-export const {changeTitle, changeTitleWithParams, changeInputAction, clearInput} = titleSlice.actions 
+export const {changeTitle, changeTitleWithParams, changeInputAction, clearInput, deleteTitle} = titleSlice.actions 
 
 export default titleSlice.reducer
