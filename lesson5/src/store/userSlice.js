@@ -13,7 +13,7 @@ const usersSlice = createSlice({
       addUser:(state, action)=>{
          state.users = [...state.users, action.payload]
       },
-      clearUser: (state,action)=>{
+      clearUser: (state, action)=>{
          state.inputValue = ''
       },
       deleteAllUsers:(state, action)=>{

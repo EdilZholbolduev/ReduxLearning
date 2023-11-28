@@ -28,7 +28,7 @@ function MathPage() {
 
   return (
    <div className="container">
-            <h1>calculator</h1>
+            <h1>math calculator</h1>
       <div className="calculator">
          <div className="inputs">
             <input placeholder="enter first number" value={input1} onChange={(event) => dispatch(firstInput(event.target.value))}/>
