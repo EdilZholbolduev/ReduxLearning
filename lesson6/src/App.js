@@ -1,10 +1,17 @@
 import './App.css';
+import CreatePostPage from './pages/createPage/CreatePage';
 import PostPage from './pages/postPage/PostPage';
 
 function App() {
   return (
     <div className="App">
-      <PostPage/>
+      <div>
+        <CreatePostPage/>
+      </div>
+      <div>
+        <PostPage/>
+      </div>
+
     </div>
   );
 }
